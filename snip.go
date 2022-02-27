@@ -14,11 +14,10 @@ func main() {
                 log.Fatal(err)
         }
         appdir := filepath.Join(usr.HomeDir, ".snipstore")
-        fmt.Println(appdir)
+        //fmt.Println(appdir)
         _, error := os.Stat(appdir)
-        fmt.Println(error)
         if error != nil && os.IsNotExist(error) {
-                errorDir := os.MkdirAll("directory", 0755)
+                errorDir := os.MkdirAll(appdir, 0755)
                 if errorDir != nil {
                         log.Fatal(fmt.Sprintf("%v and %s", error, errorDir))
                 }
