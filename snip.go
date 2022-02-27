@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+        fmt.Println("Snip v0.0.1 made with love by @Octalbyte (https://github.com/Octalbyte)")
         usr, err := user.Current()
         if err != nil {
                 log.Fatal(err)
@@ -28,7 +29,20 @@ func main() {
         }
         var action = os.Args[1]
         switch action {
-
+                case "help":
+                help()
+                default: 
+                fmt.Println("Unknown action. run 'snip help' to get help.")                
         }
         
+}
+
+func help(){
+        fmt.Println(
+                `
+                Hi! This is the help.
+                Here are some arguments for the code:
+
+                Any issues might be reported at https://github.com/Octalbyte/snip
+                `)
 }
